@@ -15,7 +15,7 @@ namespace WebShopProductUpdaterService.Controllers
         public IHttpActionResult Post([FromBody] Product product)
         {
             bool insertIfNew = bool.Parse(ConfigurationManager.AppSettings["insertIfNew"]);
-            int status = new ProductBL().SaveProductFromExternalApplication(product.Barcode, product.Name, product.Quantity, product.Price, insertIfNew);
+            int status = new ProductBL().SaveProductFromExternalApplication(product.Barcode, product.Name, product.Quantity, product.Price, product.ExternalCategoryID, insertIfNew);
             return Ok(status);
         }
     }

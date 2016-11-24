@@ -11,5 +11,6 @@ namespace WebShopProductUpdaterService.Models
         public string Name { get; set; }
         public double Quantity { get; set; }
         public double Price { get; set; }
+        public int ExternalCategoryID { get; set; }
     }
 }
